@@ -18,3 +18,4 @@ END {
     print "Salary: " min_salary
 }
 ' "$file"
+
