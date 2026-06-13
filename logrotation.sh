@@ -15,6 +15,7 @@ if [ "$current_usage" -ge "$threshold" ]; then
     # "copy the log content and compress it on the fly to save space"
     tar -czf "$log_file" > "$backup_file"
     # using true > file ensures the original log file is cleared without deleting it, which is important for applications that keep the file handle open
+    # It makes the file size zero,it is overwritten by nothing.
     true > "$log_file"
     echo "Log file rotated: $backup_file"
 else
